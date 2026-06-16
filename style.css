@@ -131,3 +131,55 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
   pointer-events:none;
   transition:opacity .8s ease;
 }
+/* ===== INTERACTIVE TERMINAL ===== */
+
+.terminal-section{
+    margin-top:80px;
+}
+
+.terminal{
+    border:1px solid var(--border);
+    border-radius:20px;
+    overflow:hidden;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(10px);
+}
+
+.terminal-body{
+    padding:24px;
+    min-height:280px;
+    font-family:"JetBrains Mono", monospace;
+}
+
+#terminal-output p{
+    margin:0 0 10px;
+}
+
+.ok{
+    color:#00ff88;
+}
+
+.terminal-input-line{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+    align-items:center;
+}
+
+#terminal-input{
+    flex:1;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:white;
+    font-family:inherit;
+    font-size:15px;
+}
+
+.command{
+    color:#00ff88;
+}
+
+.error{
+    color:#ff6666;
+}
