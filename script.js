@@ -1,43 +1,31 @@
-const year = document.getElementById('year');
+const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-const phrases = [
-  'Android Researcher • Emulator Engineer • Robot Developer',
-  'ADB Lab • Web Interface • Automation Builder',
-  'Building personal tools, experiments and creative projects'
+const bootLines = [
+  "> boot KevinOS",
+  "> loading developer modules...",
+  "[OK] Android Lab",
+  "[OK] Robot Engineering",
+  "[OK] Web Interface",
+  "[OK] Social Links",
+  "[READY] System online"
 ];
 
-const typing = document.getElementById('typing');
-let phraseIndex = 0;
-let charIndex = 0;
-let deleting = false;
+const bootBox = document.querySelector(".boot-log");
 
-function typeLoop(){
-  if(!typing) return;
-  const phrase = phrases[phraseIndex];
-  typing.textContent = phrase.slice(0, charIndex) + '█';
+if (bootBox) {
+  bootBox.innerHTML = "";
 
-  if(!deleting && charIndex < phrase.length){
-    charIndex++;
-    setTimeout(typeLoop, 45);
-    return;
-  }
+  bootLines.forEach((line, index) => {
+    setTimeout(() => {
+      const p = document.createElement("p");
+      p.textContent = line;
 
-  if(!deleting && charIndex === phrase.length){
-    deleting = true;
-    setTimeout(typeLoop, 1400);
-    return;
-  }
+      if (line.includes("[OK]") || line.includes("[READY]")) {
+        p.classList.add("ok");
+      }
 
-  if(deleting && charIndex > 0){
-    charIndex--;
-    setTimeout(typeLoop, 22);
-    return;
-  }
-
-  deleting = false;
-  phraseIndex = (phraseIndex + 1) % phrases.length;
-  setTimeout(typeLoop, 250);
+      bootBox.appendChild(p);
+    }, index * 550);
+  });
 }
-
-typeLoop();
