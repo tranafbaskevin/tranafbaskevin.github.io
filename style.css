@@ -183,3 +183,29 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
 .error{
     color:#ff6666;
 }
+.online::before{
+  content:"";
+  display:inline-block;
+  width:8px;
+  height:8px;
+  margin-right:8px;
+  border-radius:50%;
+  background:#00ff88;
+  box-shadow:0 0 12px #00ff88;
+  animation:pulseOnline 1.2s infinite;
+}
+
+@keyframes pulseOnline{
+  0%{
+    opacity:.35;
+    transform:scale(.85);
+  }
+  50%{
+    opacity:1;
+    transform:scale(1.15);
+  }
+  100%{
+    opacity:.35;
+    transform:scale(.85);
+  }
+}
