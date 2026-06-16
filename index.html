@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="noise"></div>
+  <div class="bg-noise"></div>
+  <div class="scanline"></div>
+
   <header class="nav">
     <a class="brand" href="#top">tranbakevin</a>
     <nav>
@@ -23,56 +25,85 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-card glass">
-        <img class="avatar" src="assets/avatar.jpg" alt="Kevin avatar" />
-        <p class="eyebrow">Personal Website</p>
-        <h1>Kevin <span>(Trần Bá Kevin)</span></h1>
-        <p class="subtitle">Google Developer • Kỹ sư robot • Emulator Engineer • Tech Explorer</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#links">Kết nối với mình</a>
-          <a class="btn" href="#projects">Xem project</a>
+      <div class="terminal hero-terminal">
+        <div class="terminal-top">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <p>kevin@portfolio: ~/profile</p>
+        </div>
+        <div class="terminal-body">
+          <p class="cmd">$ whoami</p>
+          <h1>Kevin <span>(Trần Bá Kevin)</span></h1>
+          <p class="cmd">$ cat role.txt</p>
+          <p class="typing" id="typing">Android Researcher • Emulator Engineer • Robot Developer</p>
+          <div class="status-grid">
+            <div><b>STATUS</b><span class="online">ONLINE</span></div>
+            <div><b>MODE</b><span>DEV LAB</span></div>
+            <div><b>STACK</b><span>ADB / Android / Web</span></div>
+            <div><b>LOCAL</b><span>Vietnam</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#links">connect --social</a>
+            <a class="btn" href="#projects">open projects</a>
+          </div>
         </div>
       </div>
-      <div class="visual-panel glass">
-        <img src="assets/bg.gif" alt="dark anime panel" />
-      </div>
+
+      <aside class="character-panel">
+        <img src="assets/panel.jpg" alt="anime black panel" />
+        <div class="panel-overlay terminal-mini">
+          <p>> boot KevinOS</p>
+          <p>> loading developer modules...</p>
+          <p class="ok">[OK] Android Lab</p>
+          <p class="ok">[OK] Robot Engineering</p>
+          <p class="ok">[OK] Web Interface</p>
+        </div>
+      </aside>
     </section>
 
     <section id="about" class="section grid-2">
       <div>
-        <p class="eyebrow">About me</p>
-        <h2>Xin chào, mình là Kevin.</h2>
-        <p>
-          Mình thích công nghệ, giả lập Android, robot, web development và các dự án sáng tạo cá nhân.
-          Đây là không gian riêng để mình giới thiệu bản thân, lưu lại project và kết nối với mọi người.
-        </p>
+        <p class="eyebrow">ABOUT ME</p>
+        <h2>Không gian cá nhân của Kevin.</h2>
+        <p class="lead">Mình thích công nghệ, giả lập Android, robot, web development và các dự án sáng tạo cá nhân. Website này được thiết kế như một terminal dashboard để giới thiệu bản thân, lưu lại project và kết nối với mọi người.</p>
       </div>
-      <div class="image-card glass">
-        <img src="assets/panel.jpg" alt="profile panel" />
+      <div class="profile-card terminal">
+        <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><p>identity.json</p></div>
+        <div class="profile-content">
+          <img class="avatar" src="assets/avatar.jpg" alt="Kevin avatar" />
+          <pre>{
+  "name": "Kevin",
+  "alias": "Trần Bá Kevin",
+  "focus": ["Android", "Robot", "Emulator"],
+  "status": "building"
+}</pre>
+        </div>
       </div>
     </section>
 
     <section id="projects" class="section">
-      <p class="eyebrow">Projects</p>
-      <h2>Personal Projects</h2>
+      <p class="eyebrow">PROJECT LOGS</p>
+      <h2>Active experiments</h2>
       <div class="cards">
-        <article class="card glass">
+        <article class="card terminal-card">
+          <span>01</span>
           <h3>Android & Emulator Research</h3>
-          <p>Ghi chú, thử nghiệm và nghiên cứu về Android emulator, proxy, ADB, HTTP/TLS.</p>
+          <p>Ghi chú, thử nghiệm và nghiên cứu về Android emulator, ADB, HTTP/TLS và môi trường lab.</p>
         </article>
-        <article class="card glass">
+        <article class="card terminal-card">
+          <span>02</span>
           <h3>Robot Engineering</h3>
           <p>Các ý tưởng và project liên quan tới kỹ thuật robot, tự động hóa và điều khiển.</p>
         </article>
-        <article class="card glass">
+        <article class="card terminal-card">
+          <span>03</span>
           <h3>Personal Web Lab</h3>
           <p>Nơi thử nghiệm giao diện web, portfolio, landing page và các công cụ cá nhân.</p>
         </article>
       </div>
     </section>
 
-    <section id="links" class="section">
-      <p class="eyebrow">Social</p>
+    <section id="links" class="section links-section">
+      <p class="eyebrow">SOCIAL ROUTES</p>
       <h2>Kết nối với mình</h2>
       <div class="link-grid">
         <a href="https://www.facebook.com/tranbakevin" target="_blank" rel="noopener">Facebook</a>
@@ -83,15 +114,19 @@
       </div>
     </section>
 
-    <section id="contact" class="section contact glass">
-      <h2>Let’s build something.</h2>
-      <p>Bạn có thể liên hệ mình qua email hoặc các mạng xã hội phía trên.</p>
-      <a class="btn primary" href="mailto:tranafbaskevin@gmail.com">Gửi email</a>
+    <section id="contact" class="section contact terminal">
+      <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><p>contact.sh</p></div>
+      <div class="terminal-body contact-body">
+        <p class="cmd">$ ./send-message</p>
+        <h2>Let’s build something.</h2>
+        <p>Bạn có thể liên hệ mình qua email hoặc các mạng xã hội phía trên.</p>
+        <a class="btn primary" href="mailto:tranafbaskevin@gmail.com">Gửi email</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Kevin — tranbakevin</p>
+    <p>© <span id="year"></span> Kevin — terminal mode</p>
   </footer>
 
   <script src="script.js"></script>
