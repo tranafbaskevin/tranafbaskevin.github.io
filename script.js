@@ -1,31 +1,41 @@
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
-const bootLines = [
-  "> boot KevinOS",
-  "> loading developer modules...",
-  "[OK] Android Lab",
-  "[OK] Robot Engineering",
-  "[OK] Web Interface",
-  "[OK] Social Links",
-  "[READY] System online"
+const bootScreen = document.getElementById("boot-screen");
+const bootText = document.getElementById("boot-text");
+
+const lines = [
+  "BOOTING KevinOS v1.0",
+  "",
+  "[ OK ] Loading Android Lab",
+  "[ OK ] Loading Robot Engineering",
+  "[ OK ] Loading Web Interface",
+  "[ OK ] Loading Social Links",
+  "",
+  "ACCESS GRANTED",
+  ""
 ];
 
-const bootBox = document.querySelector(".boot-log");
+let current = 0;
 
-if (bootBox) {
-  bootBox.innerHTML = "";
+function typeLine() {
+  if (current < lines.length) {
+    bootText.textContent += lines[current] + "\n";
+    current++;
 
-  bootLines.forEach((line, index) => {
+    setTimeout(typeLine, 350);
+  } else {
     setTimeout(() => {
-      const p = document.createElement("p");
-      p.textContent = line;
+      bootScreen.classList.add("boot-hide");
 
-      if (line.includes("[OK]") || line.includes("[READY]")) {
-        p.classList.add("ok");
-      }
+      setTimeout(() => {
+        bootScreen.remove();
+      }, 800);
 
-      bootBox.appendChild(p);
-    }, index * 550);
-  });
+    }, 1000);
+  }
 }
+
+window.addEventListener("load", () => {
+  typeLine();
+});
