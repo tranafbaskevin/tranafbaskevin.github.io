@@ -47,6 +47,8 @@ const commands = {
     "projects - show personal projects",
     "social   - show social links",
     "experience - show experience",
+    "whoami - show profile",
+    "contact - contact information",
     "clear    - clear terminal"
   ],
   about: [
@@ -66,26 +68,54 @@ const commands = {
     "03 Personal Web Lab"
   ],
   experience: [
-  "Android Emulator Research",
-  "- BlueStacks",
-  "- LDPlayer",
-  "- Android-x86",
   "",
-  "Robot Engineering",
-  "- Arduino",
-  "- Servo Control",
-  "- Sensor Integration",
+  "[ANDROID EMULATOR RESEARCH]",
+  " ├─ BlueStacks",
+  " ├─ LDPlayer",
+  " └─ Android-x86",
+
   "",
-  "English Teaching",
-  "- Teaching Grade 7 & 10",
-  "- Lesson Design",
-  "- Classroom Activities",
+
+  "[ROBOT ENGINEERING]",
+  " ├─ Arduino",
+  " ├─ Servo Control",
+  " └─ Sensor Integration",
+
   "",
-  "Portfolio Website",
-  "- HTML",
-  "- CSS",
-  "- JavaScript",
-  "- GitHub Pages"
+
+  "[ENGLISH TEACHING]",
+  " ├─ Teaching Grade 7 & 10",
+  " ├─ Lesson Design",
+  " └─ Classroom Activities",
+
+  "",
+
+  "[PORTFOLIO WEBSITE]",
+  " ├─ HTML",
+  " ├─ CSS",
+  " ├─ JavaScript",
+  " └─ GitHub Pages"
+],
+  whoami: [
+  "Kevin / Trần Bá Kevin",
+  "",
+  "Android Researcher",
+  "Robot Developer",
+  "English Tutor",
+  "Web Developer"
+],
+  contact: [
+  "Email:",
+  "tranafbaskevin@gmail.com",
+  "",
+  "Facebook:",
+  "facebook.com/tranbakevin",
+  "",
+  "Instagram:",
+  "instagram.com/vangogheyess",
+  "",
+  "Discord:",
+  "EyHmRQPygq"
 ],
   social: [
     "Facebook: https://www.facebook.com/tranbakevin",
