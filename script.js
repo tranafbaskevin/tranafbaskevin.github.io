@@ -42,6 +42,7 @@ const commands = {
   help: [
     "Available commands:",
     "help     - show command list",
+    "music   - open music playlist",
     "stats - website statistics",
     "about    - about Kevin",
     "skills   - show skill stack",
@@ -156,6 +157,17 @@ if (input && output) {
       output.innerHTML = "";
       return;
     }
+
+    if (cmd === "music") {
+    printLine("Opening Kevin Playlist...", "ok");
+
+    window.open(
+        "https://www.youtube.com/@tranafbaskevjn/playlists",
+        "_blank"
+    );
+
+    return;
+}
 
     if (commands[cmd]) {
       commands[cmd].forEach(line => printLine(line, "ok"));
