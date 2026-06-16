@@ -221,3 +221,12 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+fetch("https://api.countapi.xyz/hit/tranbakevin/portfolio")
+.then(response => response.json())
+.then(data => {
+    const visitor = document.getElementById("visitor-count");
+
+    if(visitor){
+        visitor.textContent = data.value;
+    }
+});
