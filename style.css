@@ -93,3 +93,41 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
 .link-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.link-grid a{padding:18px;border-radius:16px;text-align:center;color:white;text-decoration:none;font-weight:900;background:#070707;border:1px solid var(--line)}.link-grid a:hover{border-color:var(--green);color:var(--green)}
 .contact{margin-bottom:60px}.contact-body{padding:34px}footer{position:relative;z-index:3;text-align:center;padding:26px;color:var(--muted);border-top:1px solid var(--line);background:#000}
 @media(max-width:900px){.hero,.grid-2{grid-template-columns:1fr}.character-panel{min-height:420px}.cards,.link-grid{grid-template-columns:1fr}.nav{align-items:flex-start;gap:12px;flex-direction:column}.status-grid{grid-template-columns:1fr}}
+/* ===== BOOT SCREEN ===== */
+
+#boot-screen{
+  position:fixed;
+  inset:0;
+  background:#000;
+  z-index:99999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-family:"JetBrains Mono", monospace;
+}
+
+.boot-box{
+  width:min(700px,90%);
+  color:#00ff88;
+}
+
+.boot-title{
+  color:white;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+#boot-text{
+  white-space:pre-wrap;
+  line-height:1.8;
+  font-size:18px;
+}
+
+.boot-hide{
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .8s ease;
+}
