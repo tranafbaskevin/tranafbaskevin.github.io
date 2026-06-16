@@ -187,6 +187,17 @@ if (input && output) {
         return;
     }
 
+    if (cmd === "music") {
+        printLine("Opening Kevin Playlist...", "ok");
+
+        window.open(
+            "https://www.youtube.com/@tranafbaskevjn/playlists",
+            "_blank"
+        );
+
+        return;
+    }
+
     if (commands[cmd]) {
         commands[cmd].forEach(line => printLine(line, "ok"));
     } else {
@@ -194,7 +205,9 @@ if (input && output) {
         printLine("Type 'help' to see available commands.");
     }
 });
-  const clock = document.getElementById("clock");
+}
+
+const clock = document.getElementById("clock");
 
 function updateClock() {
     if (!clock) return;
@@ -208,6 +221,3 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
-
-});
-
