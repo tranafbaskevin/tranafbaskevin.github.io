@@ -46,6 +46,7 @@ const commands = {
     "skills   - show skill stack",
     "projects - show personal projects",
     "social   - show social links",
+    "experience - show experience",
     "clear    - clear terminal"
   ],
   about: [
@@ -64,6 +65,28 @@ const commands = {
     "02 Robot Engineering",
     "03 Personal Web Lab"
   ],
+  experience: [
+  "Android Emulator Research",
+  "- BlueStacks",
+  "- LDPlayer",
+  "- Android-x86",
+  "",
+  "Robot Engineering",
+  "- Arduino",
+  "- Servo Control",
+  "- Sensor Integration",
+  "",
+  "English Teaching",
+  "- Teaching Grade 7 & 10",
+  "- Lesson Design",
+  "- Classroom Activities",
+  "",
+  "Portfolio Website",
+  "- HTML",
+  "- CSS",
+  "- JavaScript",
+  "- GitHub Pages"
+],
   social: [
     "Facebook: https://www.facebook.com/tranbakevin",
     "Instagram: https://www.instagram.com/vangogheyess/",
