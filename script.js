@@ -36,6 +36,7 @@ window.addEventListener("load", typeBoot);
 
 const input = document.getElementById("terminal-input");
 const output = document.getElementById("terminal-output");
+const runBtn = document.getElementById("terminal-run");
 
 const commands = {
   help: [
@@ -81,7 +82,9 @@ function printLine(text, className = "") {
 
 if (input && output) {
   input.addEventListener("keyup", function (e) {
-    if (e.key !== "Enter") return;
+    if (e.key !== "Enter" &&
+    e.key !== "Go" &&
+    e.key !== "Done") return;
 
     const cmd = input.value.trim().toLowerCase();
     input.value = "";
@@ -100,4 +103,22 @@ if (input && output) {
       printLine("Type 'help' to see available commands.");
     }
   });
+  if (runBtn) runBtn.addEventListener("click", function () {
+    const cmd = input.value.trim().toLowerCase();
+    input.value = "";
+
+    printLine("$ " + cmd, "command");
+
+    if (cmd === "clear") {
+        output.innerHTML = "";
+        return;
+    }
+
+    if (commands[cmd]) {
+        commands[cmd].forEach(line => printLine(line, "ok"));
+    } else {
+        printLine("Command not found: " + cmd, "error");
+        printLine("Type 'help' to see available commands.");
+    }
+});
 }
