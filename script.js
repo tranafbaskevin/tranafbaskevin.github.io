@@ -42,6 +42,7 @@ const commands = {
   help: [
     "Available commands:",
     "help     - show command list",
+    "stats - website statistics",
     "about    - about Kevin",
     "skills   - show skill stack",
     "projects - show personal projects",
@@ -103,6 +104,13 @@ const commands = {
   "Robot Developer",
   "English Tutor",
   "Web Developer"
+],
+  stats: [
+  "Website Version : 1.0",
+  "Projects         : 3",
+  "Experience Areas : 4",
+  "Terminal Commands: 9",
+  "Status           : ONLINE"
 ],
   contact: [
   "Email:",
