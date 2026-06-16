@@ -194,4 +194,20 @@ if (input && output) {
         printLine("Type 'help' to see available commands.");
     }
 });
+  const clock = document.getElementById("clock");
+
+function updateClock() {
+    if (!clock) return;
+
+    const now = new Date();
+
+    clock.textContent = now.toLocaleTimeString("vi-VN", {
+        hour12: false
+    });
 }
+
+updateClock();
+setInterval(updateClock, 1000);
+
+});
+
