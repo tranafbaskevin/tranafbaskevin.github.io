@@ -242,10 +242,35 @@ if (themeToggle) {
       themeToggle.textContent = "☀ light";
       localStorage.setItem("theme", "dark");
     }
+    
+    updatePanelImage();
   });
 
   if (localStorage.getItem("theme") === "light") {
     document.body.classList.add("light-theme");
     themeToggle.textContent = "☾ dark";
   }
+
 }
+const panelImg = document.getElementById("panel-img");
+
+function switchPanelImage(src) {
+  if (!panelImg || panelImg.src.includes(src)) return;
+
+  panelImg.classList.add("fade-out");
+
+  setTimeout(() => {
+    panelImg.src = src;
+    panelImg.classList.remove("fade-out");
+  }, 500);
+}
+
+function updatePanelImage() {
+  if (document.body.classList.contains("light-theme")) {
+    switchPanelImage("assets/arlecchino-eyes-panel.jpeg");
+  } else {
+    switchPanelImage("assets/panel.jpg");
+  }
+}
+
+updatePanelImage();
