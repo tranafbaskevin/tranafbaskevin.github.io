@@ -343,3 +343,19 @@ window.addEventListener("load", function () {
     window.scrollTo(0, 0);
   }, 0);
 });
+const uptimeEl = document.getElementById("uptime");
+const startTime = Date.now();
+
+function updateUptime(){
+  if (!uptimeEl) return;
+
+  const diff = Date.now() - startTime;
+  const hours = String(Math.floor(diff / 3600000)).padStart(2, "0");
+  const minutes = String(Math.floor((diff % 3600000) / 60000)).padStart(2, "0");
+  const seconds = String(Math.floor((diff % 60000) / 1000)).padStart(2, "0");
+
+  uptimeEl.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+updateUptime();
+setInterval(updateUptime, 1000);
