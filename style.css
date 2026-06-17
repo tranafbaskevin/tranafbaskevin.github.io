@@ -541,3 +541,13 @@ body.light-theme .hero-terminal::before{
     translateY(-6px)
     scale(1.09);
 }
+.typing::after{
+  content:"_";
+  margin-left:4px;
+  animation:blinkCursor .8s infinite;
+}
+
+@keyframes blinkCursor{
+  0%, 50%{opacity:1;}
+  51%, 100%{opacity:0;}
+}
