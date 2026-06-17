@@ -446,30 +446,38 @@ body.light-theme #panel-img{
   object-position:35% center;
 }
 .hero-terminal{
-    background: rgba(15,15,15,.72);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(255,255,255,.08);
-
-    box-shadow:
-        0 25px 80px rgba(0,0,0,.45);
-
-    overflow: hidden;
-    position: relative;
+  background: rgba(18,18,18,.58) !important;
+  backdrop-filter: blur(26px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(26px) saturate(140%) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-terminal::before{
-    content:"";
-    position:absolute;
-    inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(255,255,255,.12),
+    transparent 35%
+  );
+  pointer-events:none;
+  z-index:1;
+}
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.08),
-            transparent 30%
-        );
+.hero-terminal > *{
+  position:relative;
+  z-index:2;
+}
 
-    pointer-events:none;
+.terminal-top{
+  background: rgba(0,0,0,.32) !important;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
