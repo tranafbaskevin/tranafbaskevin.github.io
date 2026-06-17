@@ -240,3 +240,41 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
 .hero{
   align-items:flex-start;
 }
+#theme-toggle{
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--text);
+  border-radius:999px;
+  padding:8px 12px;
+  font-family:inherit;
+  cursor:pointer;
+}
+
+#theme-toggle:hover{
+  border-color:var(--green);
+  color:var(--green);
+}
+
+body.light-theme{
+  --bg:#f4f4f4;
+  --text:#111;
+  --muted:#555;
+  --soft:#ffffff;
+  --line:rgba(0,0,0,.14);
+  --green:#008f5a;
+  background:#f4f4f4;
+  color:#111;
+}
+
+body.light-theme .terminal,
+body.light-theme .hero-terminal,
+body.light-theme .profile-card,
+body.light-theme .card,
+body.light-theme .contact{
+  background:rgba(255,255,255,.78);
+}
+
+body.light-theme .bg-noise,
+body.light-theme .scanline{
+  opacity:.12;
+}
