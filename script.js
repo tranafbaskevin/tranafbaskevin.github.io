@@ -225,7 +225,7 @@ const lofiBtn = document.getElementById("lofi-toggle");
 
 if (lofiBtn) {
   lofiBtn.addEventListener("click", function () {
-    lofiBtn.textContent = "Ⅱ opening lofi radio...";
+    lofiBtn.textContent = "Ⅱ opening cyberpunk radio, welcome to our cyberworld...";
 
 const nowPlaying = document.querySelector(".now-playing");
 
