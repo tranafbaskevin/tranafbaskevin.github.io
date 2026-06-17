@@ -386,3 +386,23 @@ body.light-theme a.brand{
   color:#fff !important;
   opacity:1 !important;
 }
+body,
+.nav,
+.terminal,
+.hero-terminal,
+.character-panel,
+.panel-overlay,
+.profile-card,
+.card,
+.contact,
+.status-grid div,
+#theme-toggle,
+#lofi-toggle,
+.btn{
+  transition:
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    opacity .35s ease;
+}
