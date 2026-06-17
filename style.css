@@ -591,3 +591,36 @@ body.light-theme .now-playing{
   flex-direction:column;
   gap:18px;
 }
+.system-status{
+  width:100%;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:rgba(0,0,0,.38);
+  backdrop-filter:blur(18px);
+  font-family:"JetBrains Mono", monospace;
+  font-size:13px;
+  line-height:1.8;
+  color:var(--text);
+}
+
+.system-status b{
+  display:block;
+  margin-bottom:10px;
+  color:var(--green);
+  letter-spacing:.12em;
+}
+
+.system-status p{
+  margin:0;
+  color:var(--muted);
+}
+
+body.light-theme .system-status{
+  background:rgba(255,255,255,.6);
+  color:#111;
+}
+
+body.light-theme .system-status p{
+  color:#333;
+}
