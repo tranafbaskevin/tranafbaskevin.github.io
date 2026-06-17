@@ -551,3 +551,15 @@ body.light-theme .hero-terminal::before{
   0%, 50%{opacity:1;}
   51%, 100%{opacity:0;}
 }
+.profile-card{
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+  0%,100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-8px);
+  }
+}
