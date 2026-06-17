@@ -380,3 +380,9 @@ body.light-theme .brand{
   color:#fff !important;
   opacity:1 !important;
 }
+body.light-theme header.nav > a.brand,
+body.light-theme .nav > a.brand,
+body.light-theme a.brand{
+  color:#fff !important;
+  opacity:1 !important;
+}
