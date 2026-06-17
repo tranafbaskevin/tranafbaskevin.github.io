@@ -274,3 +274,46 @@ function updatePanelImage() {
 }
 
 updatePanelImage();
+const typingText = document.getElementById("typing");
+
+const roles = [
+  "Android Researcher",
+  "Emulator Engineer",
+  "Robot Developer",
+  "Web Developer"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeRole() {
+  if (!typingText) return;
+
+  const currentRole = roles[roleIndex];
+
+  if (isDeleting) {
+    charIndex--;
+  } else {
+    charIndex++;
+  }
+
+  typingText.textContent = currentRole.substring(0, charIndex);
+
+  let speed = isDeleting ? 45 : 80;
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    speed = 1200;
+    isDeleting = true;
+  }
+
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+    speed = 300;
+  }
+
+  setTimeout(typeRole, speed);
+}
+
+typeRole();
