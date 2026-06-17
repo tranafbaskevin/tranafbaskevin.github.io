@@ -83,7 +83,8 @@ h1 span{display:block;color:var(--muted);font-size:.34em;letter-spacing:-.02em;m
     position:relative;
     border-radius:28px;
     min-height:520px;
-
+    overflow:hidden;
+  
     background:rgba(18,18,18,.92);
     border:1px solid rgba(255,255,255,.06);
 
@@ -641,4 +642,11 @@ body.light-theme .system-status{
 
 body.light-theme .system-status p{
   color:#333;
+}
+body.light-theme .character-panel{
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.35),
+        0 10px 35px rgba(0,0,0,.22);
 }
