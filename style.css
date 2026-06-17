@@ -311,3 +311,33 @@ body.light-theme nav a,
 body.light-theme #theme-toggle{
   color:#111;
 }
+/* Light theme fixes */
+body.light-theme .character-panel{
+  background:rgba(255,255,255,.86);
+}
+
+body.light-theme .panel-overlay{
+  background:rgba(255,255,255,.82);
+  color:#111;
+}
+
+body.light-theme .panel-overlay p,
+body.light-theme .panel-overlay .ok{
+  color:#111;
+}
+
+body.light-theme .profile-content pre{
+  color:#111;
+}
+
+body.light-theme .terminal-body,
+body.light-theme .terminal-body p,
+body.light-theme .terminal-input-line,
+body.light-theme #terminal-input{
+  color:#111;
+}
+
+body.light-theme #terminal-input{
+  background:transparent;
+  caret-color:#111;
+}
