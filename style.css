@@ -552,14 +552,16 @@ body.light-theme .hero-terminal::before{
   51%, 100%{opacity:0;}
 }
 .profile-card{
-  animation: floatCard 4s ease-in-out infinite;
+  animation: floatCard 5s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes floatCard{
   0%,100%{
-    transform: translateY(0);
+    transform: translateY(0px);
   }
+
   50%{
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
 }
