@@ -365,3 +365,18 @@ body.light-theme #theme-toggle{
   border-color:rgba(0,0,0,.18);
   background:rgba(255,255,255,.55);
 }
+body.light-theme header.nav nav a,
+body.light-theme .nav nav a,
+body.light-theme header a{
+  color:#111 !important;
+  opacity:1 !important;
+}
+
+body.light-theme header.nav nav a:hover,
+body.light-theme .nav nav a:hover{
+  color:#008f5a !important;
+}
+body.light-theme .brand{
+  color:#111 !important;
+  opacity:1 !important;
+}
