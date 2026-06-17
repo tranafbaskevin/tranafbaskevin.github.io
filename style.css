@@ -434,3 +434,14 @@ body.light-theme #panel-img{
   transform:scale(1.05);
   filter:contrast(1.08) brightness(1.05);
 }
+.character-panel img{
+  display:block;
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  object-position:center;
+}
+
+body.light-theme #panel-img{
+  object-position:center top;
+}
