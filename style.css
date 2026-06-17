@@ -407,14 +407,14 @@ body,
     opacity .35s ease;
 }
 body.light-theme .bg-noise{
-  opacity:.08;
+  opacity:.18;
 }
 
 body.light-theme .scanline{
-  opacity:.08;
+  opacity:.14;
 }
 
 body.light-theme::before{
-  opacity:.16;
+  opacity:.32;
   filter:grayscale(1) contrast(.85) brightness(1.15);
 }
