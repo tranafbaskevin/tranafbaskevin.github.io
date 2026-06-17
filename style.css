@@ -565,3 +565,21 @@ body.light-theme .hero-terminal::before{
     transform: translateY(-6px);
   }
 }
+.now-playing{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(0,0,0,.35);
+  font-size:13px;
+  line-height:1.7;
+}
+
+.now-playing p{
+  margin:0;
+}
+
+body.light-theme .now-playing{
+  background:rgba(255,255,255,.55);
+  color:#111;
+}
