@@ -295,3 +295,19 @@ body.light-theme .hero-terminal{
 body.light-theme .character-panel{
   background:#050505;
 }
+body.light-theme .status-grid span{
+  color:#111 !important;
+}
+
+body.light-theme .status-grid b{
+  color:#555;
+}
+
+body.light-theme .status-grid .online{
+  color:#008f5a !important;
+}
+
+body.light-theme nav a,
+body.light-theme #theme-toggle{
+  color:#111;
+}
