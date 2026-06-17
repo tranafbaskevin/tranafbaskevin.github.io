@@ -586,3 +586,8 @@ body.light-theme .now-playing{
 .cursor{
   animation: blinkCursor .8s infinite;
 }
+.right-column{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
