@@ -583,3 +583,6 @@ body.light-theme .now-playing{
   background:rgba(255,255,255,.55);
   color:#111;
 }
+.cursor{
+  animation: blinkCursor .8s infinite;
+}
