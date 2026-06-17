@@ -229,3 +229,23 @@ if (lofiBtn) {
     window.open("https://www.youtube.com/watch?v=X4VbdwhkE10", "_blank");
   });
 }
+const themeToggle = document.getElementById("theme-toggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("light-theme");
+
+    if (document.body.classList.contains("light-theme")) {
+      themeToggle.textContent = "☾ dark";
+      localStorage.setItem("theme", "light");
+    } else {
+      themeToggle.textContent = "☀ light";
+      localStorage.setItem("theme", "dark");
+    }
+  });
+
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeToggle.textContent = "☾ dark";
+  }
+}
