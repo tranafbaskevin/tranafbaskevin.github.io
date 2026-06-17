@@ -225,8 +225,21 @@ const lofiBtn = document.getElementById("lofi-toggle");
 
 if (lofiBtn) {
   lofiBtn.addEventListener("click", function () {
-    lofiBtn.textContent = "⏸ opening lofi radio...";
-    window.open("https://www.youtube.com/watch?v=X4VbdwhkE10", "_blank");
+    lofiBtn.textContent = "Ⅱ opening lofi radio...";
+
+const nowPlaying = document.querySelector(".now-playing");
+
+if (nowPlaying) {
+  nowPlaying.innerHTML = `
+    <p>$ nowplaying<span class="cursor">_</span></p>
+    <p>source: YouTube</p>
+    <p>track : In Your Arms</p>
+    <p>artist: Mr.Kitty</p>
+    <p>status: external tab opened</p>
+  `;
+}
+
+window.open("https://www.youtube.com/watch?v=x4VbdwhkE10", "_blank");
   });
 }
 const themeToggle = document.getElementById("theme-toggle");
