@@ -537,7 +537,7 @@ body.light-theme .hero-terminal::before{
     box-shadow .35s ease;
 }
 .character-panel:hover{
-  transform:translateY(-6px);
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.35);
+  transform:
+    translateY(-6px)
+    scale(1.09);
 }
