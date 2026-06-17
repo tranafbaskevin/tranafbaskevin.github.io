@@ -341,3 +341,27 @@ body.light-theme #terminal-input{
   background:transparent;
   caret-color:#111;
 }
+.nav nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+#theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  height:34px;
+}
+
+body.light-theme .nav a,
+body.light-theme #theme-toggle{
+  color:#111 !important;
+  opacity:1;
+}
+
+body.light-theme #theme-toggle{
+  border-color:rgba(0,0,0,.18);
+  background:rgba(255,255,255,.55);
+}
