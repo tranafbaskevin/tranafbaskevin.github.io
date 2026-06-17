@@ -239,7 +239,7 @@ if (nowPlaying) {
   `;
 }
 
-window.open("https://www.youtube.com/watch?v=x4VbdwhkE10", "_blank");
+window.open("https://youtu.be/d1SktoLw0hI?si=ChTNyloSd7C-fLE7", "_blank");
   });
 }
 const themeToggle = document.getElementById("theme-toggle");
