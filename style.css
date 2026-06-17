@@ -368,7 +368,7 @@ body.light-theme #theme-toggle{
 body.light-theme header.nav nav a,
 body.light-theme .nav nav a,
 body.light-theme header a{
-  color:#111 !important;
+  color:#fff !important;
   opacity:1 !important;
 }
 
@@ -377,6 +377,6 @@ body.light-theme .nav nav a:hover{
   color:#008f5a !important;
 }
 body.light-theme .brand{
-  color:#111 !important;
+  color:#fff !important;
   opacity:1 !important;
 }
