@@ -209,3 +209,26 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
     transform:scale(.85);
   }
 }
+.music-status{
+  grid-column:1 / -1;
+}
+
+#lofi-toggle{
+  margin-top:10px;
+  width:100%;
+  background:#0b0b0b;
+  border:1px solid rgba(255,255,255,.08);
+  color:#00ff88;
+  padding:12px;
+  border-radius:12px;
+  font-family:inherit;
+  font-size:14px;
+  text-align:left;
+  cursor:pointer;
+  transition:.2s;
+}
+
+#lofi-toggle:hover{
+  border-color:#00ff88;
+  box-shadow:0 0 12px rgba(0,255,136,.25);
+}
