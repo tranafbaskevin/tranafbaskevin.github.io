@@ -278,3 +278,20 @@ body.light-theme .bg-noise,
 body.light-theme .scanline{
   opacity:.12;
 }
+body.light-theme .typing,
+body.light-theme .lead,
+body.light-theme .terminal-body p:not(.cmd){
+  color:#222;
+}
+
+body.light-theme .cmd{
+  color:#008f5a;
+}
+
+body.light-theme .hero-terminal{
+  background:rgba(255,255,255,.86);
+}
+
+body.light-theme .character-panel{
+  background:#050505;
+}
