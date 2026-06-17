@@ -221,3 +221,11 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+const lofiBtn = document.getElementById("lofi-toggle");
+
+if (lofiBtn) {
+  lofiBtn.addEventListener("click", function () {
+    lofiBtn.textContent = "⏸ opening lofi radio...";
+    window.open("https://www.youtube.com/watch?v=X4VbdwhkE10", "_blank");
+  });
+}
