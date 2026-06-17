@@ -406,3 +406,15 @@ body,
     box-shadow .35s ease,
     opacity .35s ease;
 }
+body.light-theme .bg-noise{
+  opacity:.08;
+}
+
+body.light-theme .scanline{
+  opacity:.08;
+}
+
+body.light-theme::before{
+  opacity:.16;
+  filter:grayscale(1) contrast(.85) brightness(1.15);
+}
