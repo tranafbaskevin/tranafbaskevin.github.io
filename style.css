@@ -79,7 +79,18 @@ h1 span{display:block;color:var(--muted);font-size:.34em;letter-spacing:-.02em;m
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;color:white;text-decoration:none;border:1px solid var(--line);font-weight:800;background:rgba(255,255,255,.04)}
 .btn.primary{background:white;color:black;border-color:white}.btn:hover{transform:translateY(-2px)}
-.character-panel{position:relative;border-radius:28px;overflow:hidden;min-height:520px;background:#000}
+.character-panel{
+    position:relative;
+    border-radius:28px;
+    min-height:520px;
+
+    background:rgba(18,18,18,.92);
+    border:1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.04),
+        0 8px 30px rgba(0,0,0,.45);
+}
 .character-panel img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) contrast(1.05)}
 .panel-overlay{position:absolute;left:18px;right:18px;bottom:18px;padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.72);backdrop-filter:blur(10px)}
 .terminal-mini p{margin:6px 0;font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted)}.terminal-mini .ok{color:var(--green)}
@@ -592,18 +603,25 @@ body.light-theme .now-playing{
   gap:18px;
 }
 .system-status{
-  width:100%;
-  padding:18px;
-  border:1px solid var(--border);
-  border-radius:18px;
-  background:rgba(0,0,0,.38);
-  backdrop-filter:blur(18px);
-  font-family:"JetBrains Mono", monospace;
-  font-size:13px;
-  line-height:1.8;
-  color:var(--text);
-}
+    width:100%;
+    padding:18px;
 
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+
+    background:rgba(10,10,10,.85);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.03),
+        0 8px 30px rgba(0,0,0,.45);
+
+    font-family:"JetBrains Mono", monospace;
+    font-size:13px;
+    line-height:1.8;
+    color:var(--text);
+}
 .system-status b{
   display:block;
   margin-bottom:10px;
