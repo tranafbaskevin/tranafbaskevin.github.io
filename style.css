@@ -232,3 +232,11 @@ pre{font-family:"JetBrains Mono",monospace;color:#e5e7eb;white-space:pre-wrap;ma
   border-color:#00ff88;
   box-shadow:0 0 12px rgba(0,255,136,.25);
 }
+.hero-terminal{
+  transform:scale(.88);
+  transform-origin:top left;
+}
+
+.hero{
+  align-items:flex-start;
+}
