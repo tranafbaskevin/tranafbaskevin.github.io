@@ -82,7 +82,7 @@ h1 span{display:block;color:var(--muted);font-size:.34em;letter-spacing:-.02em;m
 .character-panel{
     position:relative;
     border-radius:28px;
-    min-height:520px;
+    height:520px;
     overflow:hidden;
   
     background:rgba(18,18,18,.92);
