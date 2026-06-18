@@ -979,3 +979,61 @@ body.light-theme .character-panel{
     grid-template-columns: 1fr;
   }
 }
+.project-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 24px;
+}
+
+.project-modal.show {
+  display: flex;
+}
+
+.project-modal-box {
+  width: min(760px, 100%);
+  border: 1px solid rgba(103, 255, 154, 0.25);
+  border-radius: 18px;
+  background: rgba(8, 8, 8, 0.96);
+  box-shadow: 0 0 50px rgba(103, 255, 154, 0.12);
+  overflow: hidden;
+}
+
+.project-close {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.project-close:hover {
+  color: #67ff9a;
+}
+
+.project-modal-body {
+  padding: 24px;
+}
+
+.project-modal-body .cmd {
+  color: #67ff9a;
+  font-family: monospace;
+  margin-bottom: 14px;
+}
+
+#project-report {
+  color: #d7d7d7;
+  font-family: monospace;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+.project-modal-body span {
+  animation: blink 1s infinite;
+}
