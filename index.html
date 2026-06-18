@@ -293,34 +293,51 @@
         <span class="project-status">[DEPLOYED]</span>
         <h3>Terminal Portfolio Website</h3>
         <p>A personal cyber-terminal portfolio built with HTML, CSS, JavaScript and GitHub Pages.</p>
-        <button class="project-btn">view project</button>
+        <button class="project-btn" data-project="portfolio">view project</button>
       </div>
 
       <div class="project-item">
         <span class="project-status">[ACTIVE]</span>
         <h3>Android Testing Lab</h3>
         <p>Experiments with Android emulator, ADB, proxy tools and app behavior testing.</p>
-        <button class="project-btn">view project</button>
+        <button class="project-btn" data-project="android">view project</button>
       </div>
 
       <div class="project-item">
         <span class="project-status">[DESIGN]</span>
         <h3>New Smile Sai Gon</h3>
         <p>A cyberpunk Discord community concept with rules, verification flow and server visuals.</p>
-        <button class="project-btn">view project</button>
+        <button class="project-btn" data-project="discord">view project</button>
       </div>
 
       <div class="project-item">
         <span class="project-status">[TEACHING]</span>
         <h3>English Tutor System</h3>
         <p>Beginner English lessons for students rebuilding their foundation from zero.</p>
-        <button class="project-btn">view project</button>
+        <button class="project-btn" data-project="english">view project</button>
       </div>
     </div>
 
     <p class="projects-cursor">&gt; 4 projects detected <span>_</span></p>
   </div>
 </section>
+<div id="project-modal" class="project-modal">
+  <div class="project-modal-box">
+    <div class="terminal-top">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <p>project-report.sh</p>
+      <button id="project-close" class="project-close">×</button>
+    </div>
+
+    <div class="project-modal-body">
+      <p class="cmd">$ open project</p>
+      <pre id="project-report"></pre>
+      <p class="cmd">$ report loaded <span>_</span></p>
+    </div>
+  </div>
+</div>
   </main>
 
   <footer>
