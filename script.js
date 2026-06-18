@@ -442,8 +442,21 @@ const projectClose = document.getElementById("project-close");
 projectButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const projectKey = button.dataset.project;
-    projectReport.textContent = projectReports[projectKey];
+    projectReport.textContent = "";
     projectModal.classList.add("show");
+
+    let text = projectReports[projectKey];
+    let i = 0;
+
+    function typeReport() {
+      if (i < text.length) {
+        projectReport.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeReport, 8);
+      }
+    }
+
+typeReport();
   });
 });
 
