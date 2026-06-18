@@ -794,3 +794,23 @@ body.light-theme .character-panel{
     padding: 22px;
   }
 }
+.devlog-item:hover {
+  transform: translateX(6px);
+  border-color: rgba(103, 255, 154, 0.35);
+  box-shadow: 0 0 24px rgba(103, 255, 154, 0.08);
+}
+
+.devlog-item {
+  transition: 0.25s ease;
+}
+
+.devlog-version::before {
+  content: "[OK] ";
+  color: #67ff9a;
+}
+
+.devlog-version::after {
+  content: " / DEPLOYED";
+  color: rgba(103, 255, 154, 0.7);
+  font-size: 11px;
+}
