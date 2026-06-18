@@ -359,3 +359,100 @@ function updateUptime(){
 
 updateUptime();
 setInterval(updateUptime, 1000);
+const projectReports = {
+  portfolio: `PROJECT REPORT
+────────────────────
+Name: Terminal Portfolio Website
+Status: DEPLOYED
+
+Tech:
+✓ HTML
+✓ CSS
+✓ JavaScript
+✓ GitHub Pages
+
+Features:
+✓ Terminal interface
+✓ Boot animation
+✓ Real-time clock
+✓ Visitor counter
+✓ Development log
+✓ Achievements
+✓ Projects & Labs`,
+
+  android: `PROJECT REPORT
+────────────────────
+Name: Android Testing Lab
+Status: ACTIVE
+
+Tools:
+✓ BlueStacks
+✓ ADB
+✓ HTTP Toolkit
+✓ Surfboard
+✓ Stash
+
+Experiments:
+✓ Emulator setup
+✓ Network proxy testing
+✓ Certificate testing
+✓ App behavior analysis`,
+
+  discord: `PROJECT REPORT
+────────────────────
+Name: New Smile Sai Gon
+Status: DESIGN
+
+Type:
+Cyberpunk Discord community
+
+Completed:
+✓ Server concept
+✓ Rules
+✓ Verification flow
+✓ Welcome messages
+✓ Visual direction`,
+
+  english: `PROJECT REPORT
+────────────────────
+Name: English Tutor System
+Status: TEACHING
+
+Goal:
+Help beginner students rebuild English foundation.
+
+Topics:
+✓ Alphabet
+✓ Numbers
+✓ Colors
+✓ Days of week
+
+Work:
+✓ Lesson plans
+✓ Mini games
+✓ Flashcards
+✓ Beginner practice`
+};
+
+const projectButtons = document.querySelectorAll(".project-btn");
+const projectModal = document.getElementById("project-modal");
+const projectReport = document.getElementById("project-report");
+const projectClose = document.getElementById("project-close");
+
+projectButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const projectKey = button.dataset.project;
+    projectReport.textContent = projectReports[projectKey];
+    projectModal.classList.add("show");
+  });
+});
+
+projectClose.addEventListener("click", () => {
+  projectModal.classList.remove("show");
+});
+
+projectModal.addEventListener("click", (event) => {
+  if (event.target === projectModal) {
+    projectModal.classList.remove("show");
+  }
+});
