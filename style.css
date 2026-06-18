@@ -715,3 +715,82 @@ body.light-theme .character-panel{
         0 0 0 1px rgba(255,255,255,.35),
         0 10px 35px rgba(0,0,0,.22);
 }
+.devlog-section {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 0 24px;
+}
+
+.devlog-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 10, 10, 0.78);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.section-kicker {
+  color: #67ff9a;
+  font-family: monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.devlog-card h2 {
+  font-size: 30px;
+  margin-bottom: 26px;
+  letter-spacing: 1px;
+}
+
+.devlog-list {
+  display: grid;
+  gap: 14px;
+}
+
+.devlog-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.devlog-version {
+  color: #67ff9a;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.devlog-item h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.devlog-item p {
+  margin: 0;
+  color: #a9adb8;
+  line-height: 1.6;
+}
+
+.devlog-cursor {
+  margin-top: 24px;
+  color: #67ff9a;
+  font-family: monospace;
+}
+
+.devlog-cursor span {
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 700px) {
+  .devlog-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .devlog-card {
+    padding: 22px;
+  }
+}
