@@ -329,7 +329,12 @@ body.light-theme .hero-terminal{
 }
 
 body.light-theme .character-panel{
-  background:#050505;
+    background:rgba(210,210,210,.72);
+    border:1px solid rgba(0,0,0,.08);
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.35),
+        0 10px 35px rgba(0,0,0,.22);
 }
 body.light-theme .status-grid span{
   color:#111 !important;
