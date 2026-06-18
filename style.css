@@ -814,3 +814,78 @@ body.light-theme .character-panel{
   color: rgba(103, 255, 154, 0.7);
   font-size: 11px;
 }
+.achievements-section {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 0 24px;
+}
+
+.achievements-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 10, 10, 0.78);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.achievements-card h2 {
+  font-size: 30px;
+  margin-bottom: 26px;
+  letter-spacing: 1px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.achievement-item {
+  padding: 18px;
+  border: 1px solid rgba(103, 255, 154, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  transition: 0.25s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103, 255, 154, 0.4);
+  box-shadow: 0 0 24px rgba(103, 255, 154, 0.08);
+}
+
+.achievement-status {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #67ff9a;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.achievement-item h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.achievement-item p {
+  margin: 0;
+  color: #a9adb8;
+  line-height: 1.6;
+}
+
+.achievement-cursor {
+  margin-top: 24px;
+  color: #67ff9a;
+  font-family: monospace;
+}
+
+.achievement-cursor span {
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 700px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+}
