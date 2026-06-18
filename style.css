@@ -93,29 +93,22 @@ h1 span{display:block;color:var(--muted);font-size:.34em;letter-spacing:-.02em;m
         0 8px 30px rgba(0,0,0,.45);
 }
 .character-panel img{
-    position:absolute;
-    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
-    object-position:center top;
     display:block;
     filter:grayscale(1) contrast(1.05);
-    z-index:0;
 }
 .panel-overlay{
     position:absolute;
     left:18px;
     right:18px;
-    bottom:28px;
-    z-index:2;
+    bottom:38px;
 
-    padding:20px;
-    min-height:165px;
+    padding:18px;
     border-radius:18px;
 
     border:1px solid rgba(255,255,255,.08);
-
     background:rgba(0,0,0,.62);
     backdrop-filter:blur(22px);
     -webkit-backdrop-filter:blur(22px);
