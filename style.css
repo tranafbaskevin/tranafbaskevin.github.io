@@ -1095,3 +1095,18 @@ body.light-theme .character-panel{
   margin-right: 8px;
   white-space: nowrap;
 }
+.terminal-cursor {
+  color: #00ff88;
+  margin-left: 4px;
+  animation: blinkCursor 1s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}

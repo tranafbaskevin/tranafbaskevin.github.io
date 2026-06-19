@@ -55,6 +55,7 @@ const commands = {
     "achievements - show unlocked badges",
     "matrix - enter hacker mode",
     "roadmap - show future plans",
+    "scan - run security scan",
     "clear    - clear terminal",
     "secret - hidden command"
   ],
@@ -164,6 +165,8 @@ roadmap: [
   "○ Mobile Improvements",
   "○ Terminal Themes"
 ],
+scan: "__SCAN__",
+
 matrix: [
     "[MATRIX MODE]",
     "",
@@ -206,8 +209,39 @@ function printLine(text, className = "") {
   p.textContent = text;
   if (className) p.className = className;
   output.appendChild(p);
-}
 
+  scrollTerminalToBottom();
+}
+function scrollTerminalToBottom() {
+  const terminalSection = document.querySelector("#terminal");
+
+  if (output) {
+    output.scrollTop = output.scrollHeight;
+  }
+
+  if (terminalSection) {
+    terminalSection.scrollIntoView({
+      behavior: "smooth",
+      block: "end"
+    });
+  }
+}
+function typeLine(text, className = "", speed = 8) {
+  const p = document.createElement("p");
+  if (className) p.className = className;
+  output.appendChild(p);
+
+  let i = 0;
+  const typing = setInterval(() => {
+    p.textContent += text.charAt(i);
+    scrollTerminalToBottom();
+    i++;
+
+    if (i >= text.length) {
+      clearInterval(typing);
+    }
+  }, speed);
+}
 if (input && output) {
   input.addEventListener("keyup", function (e) {
     if (e.key !== "Enter" &&
@@ -217,7 +251,7 @@ if (input && output) {
     const cmd = input.value.trim().toLowerCase();
     input.value = "";
 
-    printLine("visitor@kevinos:~$ " + cmd, "command");
+    typeLine("visitor@kevinos:~$ " + cmd, "command", 12);
 
     if (cmd === "clear") {
       output.innerHTML = "";
@@ -257,6 +291,30 @@ if (input && output) {
 
   return;
 }
+if (cmd === "scan") {
+  const logs = [
+    "[01%] Initializing system...",
+    "[18%] Loading modules...",
+    "[37%] Scanning Android Lab...",
+    "[62%] Checking Portfolio Core...",
+    "[84%] Verifying GitHub Pages...",
+    "[100%] Scan Complete.",
+    "",
+    "STATUS: SECURE"
+  ];
+
+  let delay = 0;
+
+  logs.forEach((line) => {
+    setTimeout(() => {
+      typeLine(line, "ok");
+    }, delay);
+
+    delay += 500;
+  });
+
+  return;
+}
     if (
         cmd === "hack" ||
         cmd === "sudo" ||
@@ -268,8 +326,12 @@ if (input && output) {
         return;
     }
     if (commands[cmd]) {
-      commands[cmd].forEach(line => printLine(line, "ok"));
-    } else {
+  commands[cmd].forEach((line, index) => {
+    setTimeout(() => {
+      typeLine(line, "ok", 8);
+    }, index * 180);
+  });
+} else {
       printLine("Command not found: " + cmd, "error");
       printLine("Type 'help' to see available commands.");
     }
@@ -320,8 +382,12 @@ if (input && output) {
 }
 
     if (commands[cmd]) {
-        commands[cmd].forEach(line => printLine(line, "ok"));
-    } else {
+  commands[cmd].forEach((line, index) => {
+    setTimeout(() => {
+      typeLine(line, "ok", 8);
+    }, index * 180);
+  });
+} else {
         printLine("Command not found: " + cmd, "error");
         printLine("Type 'help' to see available commands.");
     }
