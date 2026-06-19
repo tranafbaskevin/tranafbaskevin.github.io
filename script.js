@@ -1,8 +1,56 @@
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
+// KevinOS First Boot Time
+let firstBootTime = localStorage.getItem("firstBootTime");
+
+if (!firstBootTime) {
+  firstBootTime = Date.now();
+  localStorage.setItem("firstBootTime", firstBootTime);
+}
+
+function getKevinOSUptime() {
+  const now = Date.now();
+  const diff = now - Number(firstBootTime);
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+// KevinOS Command History
+
+let commandHistory =
+  JSON.parse(localStorage.getItem("commandHistory")) || [];
+
+// KevinOS Login History
+
+const currentLogin = new Date().toLocaleString();
+
+const previousLogin =
+  localStorage.getItem("currentLogin") || "First Login Detected";
+
+localStorage.setItem("previousLogin", previousLogin);
+localStorage.setItem("currentLogin", currentLogin);
+
+// KevinOS Boot Counter
+
+let bootCount = localStorage.getItem("bootCount");
+
+if (!bootCount) {
+  bootCount = 0;
+}
+
+bootCount++;
+
+localStorage.setItem("bootCount", bootCount);
+
 const bootScreen = document.getElementById("boot-screen");
 const bootText = document.getElementById("boot-text");
+
+const systemBoot = String(bootCount).padStart(6, "0");
 
 const bootLines = [
   "BOOTING KevinOS v2.0",
@@ -14,6 +62,8 @@ const bootLines = [
   "[ OK ] Loading Security Scanner",
   "",
   "ACCESS GRANTED",
+"",
+`BOOT INSTANCE #${systemBoot}`,
 "",
 "INITIALIZING USER SESSION..."
 ];
@@ -45,6 +95,8 @@ const commands = {
   help: [
     "Available commands:",
     "help     - show command list",
+    "history - show command history",
+    "lastlogin - show login history",
     "music   - open music playlist",
     "stats - website statistics",
     "about    - about Kevin",
@@ -55,7 +107,11 @@ const commands = {
     "whoami - show profile",
     "contact - contact information",
     "devlog   - show development log",
+    "system   - show system information",
+    "neofetch - display system banner",
+    "uptime - show system uptime",
     "achievements - show unlocked badges",
+    "lore - show historical badges",
     "matrix - enter hacker mode",
     "roadmap - show future plans",
     "scan - run security scan",
@@ -67,6 +123,113 @@ const commands = {
     "Android Researcher • Emulator Engineer • Robot Developer",
     "Personal terminal-style portfolio."
   ],
+  lastlogin: [
+  "=== LAST LOGIN ===",
+  "",
+  `Current Login:`,
+  currentLogin,
+  "",
+  `Previous Login:`,
+  previousLogin,
+  "",
+  `Boot Instance: #${systemBoot}`,
+  "",
+  "[ OK ] Login history loaded"
+],
+  system: [
+  "=== KevinOS SYSTEM INFO ===",
+  "",
+  "Version: KevinOS v2.1",
+  "Kernel: KVN-2.1",
+  "User: visitor",
+  "Status: ONLINE",
+  "Terminal: READY",
+  "Security Scanner: LOADED",
+  "Projects Loaded: 4",
+  "Commands Loaded: 15",
+  "",
+  "[ OK ] System integrity: 100%"
+],
+neofetch: [
+"Decrypting KevinOS kernel...",
+"",
+"010101010101010101010101010",
+"101010101010101010101010101",
+"010101010101010101010101010",
+"",
+"[ WARN ] Legacy render artifact detected",
+"[ INFO ] Artifact preserved for historical accuracy",
+"[ OK ] System information recovered",
+"",
+"██╗  ██╗███████╗██╗   ██╗██╗███╗   ██╗",
+"██║ ██╔╝██╔════╝██║   ██║██║████╗  ██║",
+"█████╔╝ █████╗  ██║   ██║██║██╔██╗ ██║",
+"██╔═██╗ ██╔══╝  ╚██╗ ██╔╝██║██║╚██╗██║",
+"██║  ██╗███████╗ ╚████╔╝ ██║██║ ╚████║",
+"╚═╝  ╚═╝╚══════╝  ╚═══╝  ╚═╝╚═╝  ╚═══╝",
+"",
+"KevinOS v2.2",
+"",
+"User   : visitor@kevinos",
+"Kernel : KVN-2.2",
+"Shell  : KevinOS Terminal",
+"Theme  : Cyber Binary",
+"Status : ONLINE"
+],
+lore: [
+"[ ACHIEVEMENTS ]",
+"",
+"🏆 First Boot",
+"Unlocked KevinOS v1.0",
+"",
+"🛠 Builder",
+"Created custom terminal system",
+"",
+"🔐 Security Analyst",
+"Executed first scan command",
+"",
+"🚀 Major Upgrade",
+"Upgraded to KevinOS v2.0",
+"",
+"👾 Easter Egg Hunter",
+"Discovered hidden command",
+"",
+"👑 KevinOS Creator",
+"Owner of the system kernel",
+"",
+"🩹 Bug Hunter",
+"Fixed boot sequence crash",
+"",
+"📡 Online Signal",
+"Activated live status indicator",
+"",
+"⏰ Time Keeper",
+"Integrated real-time clock",
+"",
+"📜 Historian",
+"Preserved legacy render artifact",
+"",
+"💀 Kernel Survivor",
+"Recovered from v2.0 boot freeze",
+"",
+"🎵 Lo-Fi Operator",
+"Integrated background radio system",
+"",
+"🌐 Web Architect",
+"Deployed portfolio to GitHub Pages",
+"",
+"Progress: 12/12",
+"",
+"[ STATUS ] ALL KNOWN ACHIEVEMENTS UNLOCKED"
+],
+uptime: [
+  "=== KevinOS UPTIME ===",
+  "",
+  `System Uptime: ${getKevinOSUptime()}`,
+  `Boot Instance: #${systemBoot}`,
+  "",
+  "[ OK ] Runtime clock synchronized"
+],
   skills: [
     "ADB / Android / Emulator",
     "Robot Engineering",
@@ -252,6 +415,18 @@ if (input && output) {
     e.key !== "Done") return;
 
     const cmd = input.value.trim().toLowerCase();
+    if (cmd) {
+  commandHistory.push(cmd);
+
+  if (commandHistory.length > 20) {
+    commandHistory.shift();
+  }
+
+  localStorage.setItem(
+    "commandHistory",
+    JSON.stringify(commandHistory)
+  );
+}
     input.value = "";
 
     typeLine("visitor@kevinos:~$ " + cmd, "command", 12);
@@ -328,6 +503,28 @@ if (cmd === "scan") {
         );
         return;
     }
+    if (cmd === "history") {
+
+    printLine("[ COMMAND HISTORY ]", "ok");
+    printLine("", "ok");
+
+    commandHistory.forEach((item, index) => {
+        printLine(
+            `${String(index + 1).padStart(2, "0")}  ${item}`,
+            "ok"
+        );
+    });
+
+    printLine("", "ok");
+    printLine(
+        `Commands Executed: ${commandHistory.length}`,
+        "ok"
+    );
+
+    printLine("[ OK ] History recovered", "ok");
+
+    return;
+}
     if (commands[cmd]) {
   commands[cmd].forEach((line, index) => {
     setTimeout(() => {
