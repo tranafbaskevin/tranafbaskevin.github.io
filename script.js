@@ -51,7 +51,12 @@ const commands = {
     "experience - show experience",
     "whoami - show profile",
     "contact - contact information",
-    "clear    - clear terminal"
+    "devlog   - show development log",
+    "achievements - show unlocked badges",
+    "matrix - enter hacker mode",
+    "roadmap - show future plans",
+    "clear    - clear terminal",
+    "secret - hidden command"
   ],
   about: [
     "Kevin / Trần Bá Kevin",
@@ -126,13 +131,74 @@ const commands = {
   "Discord:",
   "EyHmRQPygq"
 ],
+  devlog: [
+  "[DEVELOPMENT LOG]",
+  "v1.5 Project Terminal Popup",
+  "v1.4 Portfolio System Online",
+  "v1.3 Character Panel Restored",
+  "v1.2 Real-Time Clock Added",
+  "v1.1 Terminal Commands Added",
+  "v1.0 GitHub Pages Deployment"
+],
+roadmap: [
+  "[PROJECT ROADMAP]",
+  "",
+  "[COMPLETED]",
+  "✓ GitHub Pages",
+  "✓ Terminal Interface",
+  "✓ Boot Animation",
+  "✓ Real-Time Clock",
+  "✓ Visitor Counter",
+  "✓ Project Popup V2",
+  "✓ Devlog Command",
+  "✓ Achievements Command",
+  "",
+  "[IN PROGRESS]",
+  "→ Portfolio Roadmap",
+  "→ Better Terminal UI",
+  "",
+  "[PLANNED]",
+  "○ Music Player",
+  "○ Contact Form",
+  "○ Project Gallery",
+  "○ Mobile Improvements",
+  "○ Terminal Themes"
+],
+matrix: [
+    "[MATRIX MODE]",
+    "",
+    "Initializing...",
+    "",
+    "01001010",
+    "10101101",
+    "00101101",
+    "11001010",
+    "10101010",
+    "01010101",
+    "11100011",
+    "00011100"
+],
+secret: [
+    "[SECURITY SYSTEM]",
+    "",
+    "ACCESS DENIED",
+    "",
+    "Nice try :)"
+],
+achievements: [
+  "[UNLOCKED BADGES]",
+  "GitHub Pages Portfolio",
+  "Terminal Interface",
+  "Discord Community Builder",
+  "English Tutor System"
+ ],
   social: [
     "Facebook: https://www.facebook.com/tranbakevin",
     "Instagram: https://www.instagram.com/vangogheyess/",
     "Zalo: https://zalo.me/0933172804",
     "Discord: https://discord.com/invite/EyHmRQPygq",
     "Email: tranafbaskevin@gmail.com"
-  ]
+  ],
 };
 
 function printLine(text, className = "") {
@@ -159,16 +225,48 @@ if (input && output) {
     }
 
     if (cmd === "music") {
-    printLine("Opening Kevin Playlist...", "ok");
+        const oldPopup = document.querySelector(".music-popup");
+        if (oldPopup) {
+          oldPopup.remove();
+        }
+        
+  printLine("Launching Music Popup V6...", "ok");
 
-    window.open(
-        "https://www.youtube.com/@tranafbaskevjn/playlists",
-        "_blank"
-    );
+  const popup = document.createElement("div");
+  popup.className = "music-popup";
+  popup.innerHTML = `
+    <div class="music-popup-header">♪ KevinOS Music Popup V6</div>
+    <div class="music-popup-body">
+      <p>Status: ready</p>
+      <p>Source: YouTube / Kevin Playlist</p>
+      <p>Mode: cyberpunk radio</p>
+      <button class="open-playlist-btn">Open Playlist</button>
+      <button class="close-music-popup">Close</button>
+    </div>
+  `;
 
-    return;
+  document.body.appendChild(popup);
+
+  popup.querySelector(".open-playlist-btn").addEventListener("click", function () {
+    window.open("https://www.youtube.com/@tranafbaskevjn/playlists", "_blank");
+  });
+
+  popup.querySelector(".close-music-popup").addEventListener("click", function () {
+    popup.remove();
+  });
+
+  return;
 }
-
+    if (
+        cmd === "hack" ||
+        cmd === "sudo" ||
+        cmd === "access"
+    ) {
+        commands.secret.forEach(line =>
+          printLine(line, "ok")
+        );
+        return;
+    }
     if (commands[cmd]) {
       commands[cmd].forEach(line => printLine(line, "ok"));
     } else {
@@ -188,15 +286,38 @@ if (input && output) {
     }
 
     if (cmd === "music") {
-        printLine("Opening Kevin Playlist...", "ok");
+        const oldPopup = document.querySelector(".music-popup");
+        if (oldPopup) {
+          oldPopup.remove();
+        }
 
-        window.open(
-            "https://www.youtube.com/@tranafbaskevjn/playlists",
-            "_blank"
-        );
+  printLine("Launching Music Popup V6...", "ok");
 
-        return;
-    }
+  const popup = document.createElement("div");
+  popup.className = "music-popup";
+  popup.innerHTML = `
+    <div class="music-popup-header">♪ KevinOS Music Popup V6</div>
+    <div class="music-popup-body">
+      <p>Status: ready</p>
+      <p>Source: YouTube / Kevin Playlist</p>
+      <p>Mode: cyberpunk radio</p>
+      <button class="open-playlist-btn">Open Playlist</button>
+      <button class="close-music-popup">Close</button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector(".open-playlist-btn").addEventListener("click", function () {
+    window.open("https://www.youtube.com/@tranafbaskevjn/playlists", "_blank");
+  });
+
+  popup.querySelector(".close-music-popup").addEventListener("click", function () {
+    popup.remove();
+  });
+
+  return;
+}
 
     if (commands[cmd]) {
         commands[cmd].forEach(line => printLine(line, "ok"));

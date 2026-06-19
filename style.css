@@ -1037,3 +1037,55 @@ body.light-theme .character-panel{
 .project-modal-body span {
   animation: blink 1s infinite;
 }
+.music-popup {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 320px;
+  background: rgba(5, 10, 12, 0.96);
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.35);
+  color: #d7ffe8;
+  z-index: 9999;
+  font-family: monospace;
+  padding: 14px;
+  animation: popupIn 0.25s ease-out;
+}
+
+.music-popup-header {
+  color: #00ff88;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.music-popup-body p {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.music-popup button {
+  margin-top: 10px;
+  margin-right: 8px;
+  background: transparent;
+  color: #00ff88;
+  border: 1px solid #00ff88;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.music-popup button:hover {
+  background: #00ff88;
+  color: #001b10;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
