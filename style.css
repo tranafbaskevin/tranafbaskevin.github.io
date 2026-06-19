@@ -1110,3 +1110,36 @@ body.light-theme .character-panel{
     opacity: 0;
   }
 }
+.devlog-major {
+  border-color: rgba(255, 60, 90, 0.9);
+  box-shadow:
+    0 0 18px rgba(255, 60, 90, 0.35),
+    inset 0 0 18px rgba(255, 60, 90, 0.08);
+  animation: majorPulse 3s infinite alternate;
+}
+
+.devlog-major .devlog-version {
+  color: #ff4d6d;
+  text-shadow: 0 0 10px rgba(255, 60, 90, 0.8);
+}
+
+.devlog-major h3 {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 60, 90, 0.7);
+}
+
+@keyframes majorPulse {
+  from {
+    border-color: rgba(255, 60, 90, 0.55);
+    box-shadow:
+      0 0 10px rgba(255, 60, 90, 0.2),
+      inset 0 0 12px rgba(255, 60, 90, 0.05);
+  }
+
+  to {
+    border-color: rgba(255, 60, 90, 1);
+    box-shadow:
+      0 0 24px rgba(255, 60, 90, 0.45),
+      inset 0 0 20px rgba(255, 60, 90, 0.1);
+  }
+}
