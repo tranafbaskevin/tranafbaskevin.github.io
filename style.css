@@ -1089,3 +1089,9 @@ body.light-theme .character-panel{
     transform: translateY(0) scale(1);
   }
 }
+.linux-prompt {
+  color: #00ff88;
+  font-weight: 700;
+  margin-right: 8px;
+  white-space: nowrap;
+}

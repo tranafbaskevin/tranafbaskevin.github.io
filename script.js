@@ -217,7 +217,7 @@ if (input && output) {
     const cmd = input.value.trim().toLowerCase();
     input.value = "";
 
-    printLine("$ " + cmd, "command");
+    printLine("visitor@kevinos:~$ " + cmd, "command");
 
     if (cmd === "clear") {
       output.innerHTML = "";
@@ -278,7 +278,7 @@ if (input && output) {
     const cmd = input.value.trim().toLowerCase();
     input.value = "";
 
-    printLine("$ " + cmd, "command");
+    printLine("visitor@kevinos:~$ " + cmd, "command");
 
     if (cmd === "clear") {
         output.innerHTML = "";
