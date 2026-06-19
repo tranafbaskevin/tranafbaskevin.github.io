@@ -5,14 +5,17 @@ const bootScreen = document.getElementById("boot-screen");
 const bootText = document.getElementById("boot-text");
 
 const bootLines = [
-  "BOOTING KevinOS v1.0",
+  "BOOTING KevinOS v2.0",
   "",
   "[ OK ] Loading Android Lab",
   "[ OK ] Loading Robot Engineering",
   "[ OK ] Loading Web Interface",
   "[ OK ] Loading Social Links",
+  "[ OK ] Loading Security Scanner",
   "",
-  "ACCESS GRANTED"
+  "ACCESS GRANTED",
+"",
+"INITIALIZING USER SESSION..."
 ];
 
 let current = 0;
