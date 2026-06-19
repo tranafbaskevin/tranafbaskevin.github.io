@@ -71,7 +71,9 @@ https://tranbakevin.github.io
 
 System Status : ONLINE
 Kernel        : KVN-2.2
+
 Developer     : Kevin
+
 Assistant      : Dora-chan
 
 [ OK ] Session saved
