@@ -69,4 +69,14 @@ https://tranbakevin.github.io
 
 ---
 
-See you, space cowboy.
+System Status : ONLINE
+Kernel        : KVN-2.2
+
+Developer     : Kevin
+
+Assistant      : Dora-chan
+
+[ OK ] Session saved
+[ OK ] Progress preserved
+
+See you, space cowboy...
